@@ -10,5 +10,3 @@ export const Category = model("Category", new Schema({
     required: true
   }
 }));
-
-
