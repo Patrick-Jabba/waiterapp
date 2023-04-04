@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Board = styled.div`
   display: flex;
-  flex: 1%;
+  flex: 1;
   flex-direction: column;
   align-items: center;
 
@@ -11,7 +11,7 @@ export const Board = styled.div`
   border-radius: 16px;
   font-size: 14px;
 
-  header {
+  > header {
     display: flex;
     align-items: center;
     padding: 8px;

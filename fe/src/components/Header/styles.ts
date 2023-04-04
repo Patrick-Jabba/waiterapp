@@ -20,14 +20,14 @@ export const Content = styled.div`
 
   .page-detailscon {
     h1 {
-      font-size: 32px;
+      font-size: 2rem;
     }
 
     h2 {
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1rem;
       opacity: 0.9;
-      margin-top: 6px;
+      margin-top: 0.375rem;
     }
   }
 `;

@@ -8,25 +8,6 @@ export const OrdersContainer = styled.div`
   gap: 32px;
 `;
 
-export const Board = styled.div`
-  display: flex;
-  flex: 1%;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 16px;
-  border: 1px solid rgba(204, 204, 204, 0.4);
-  border-radius: 16px;
-  font-size: 14px;
-
-  header {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    gap: 8px;
-  }
-`;
-
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
