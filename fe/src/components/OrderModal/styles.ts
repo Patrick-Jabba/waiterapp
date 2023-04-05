@@ -115,5 +115,33 @@ export const OrderDetails = styled.div`
       font-weight: 500;
     }
   }
+`;
+
+export const Actions = styled.footer`
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+
+  .primary {
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 48px;
+    padding: 12px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .secondary {
+    color: #d73035;
+    padding: 12px 24px;
+    font-weight: bold;
+    border: 0;
+    background-color: transparent;
+    margin-top: 12px;
+  }
 
 `;
