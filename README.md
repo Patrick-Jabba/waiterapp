@@ -5,4 +5,6 @@
 
 ## Aula 01: Criação da API utilizando Node.js e Typescript. ✅
 
-## Aula 02: Desenvolvimento da Interface web com React e Typescript 👷‍♂️ em andamento
+## Aula 02: Desenvolvimento da Interface web com React e Typescript ✅
+
+## Aula 03: Desenvolvimento da Interface Mobile com React Native e Typescript 👷‍♂️ em andamento
