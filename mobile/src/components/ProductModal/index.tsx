@@ -12,11 +12,17 @@ interface ProductModalProps{
   visible: boolean;
   onClose: () => void;
   product: null | Product;
+  onAddToCart: (product: Product) => void;
 }
 
-export function ProductModal({ visible, onClose, product }: ProductModalProps) {
+export function ProductModal({ visible, onClose, product, onAddToCart }: ProductModalProps) {
   if(!product) {
     return null;
+  }
+
+  function handleAddToCart() {
+    onAddToCart(product!);
+    onClose();
   }
 
   return(
@@ -44,7 +50,7 @@ export function ProductModal({ visible, onClose, product }: ProductModalProps) {
 
         {product.ingredients.length > 0 && (
           <IngredientsContainer>
-            <Text weight="600" color="666">Ingredientes</Text>
+            <Text weight="600" color="#666">Ingredientes</Text>
             <FlatList
               data={product.ingredients}
               keyExtractor={ingredient => ingredient._id}
@@ -74,7 +80,7 @@ export function ProductModal({ visible, onClose, product }: ProductModalProps) {
             <Text size={20} weight="600">{formatCurrency(product.price)}</Text>
           </PriceContainer>
 
-          <Button onPress={() => alert("add pedido")}>
+          <Button onPress={handleAddToCart}>
             Adicionar ao pedido
           </Button>
         </FooterContainer>

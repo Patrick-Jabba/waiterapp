@@ -1,19 +1,37 @@
-import { FlatList } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import { CartItem } from "../../Types/CartItem";
+import { Product } from "../../Types/Product";
 
-import { Item, Actions, ProductContainer, Image, QuantityContainer, ProductDetails, Summary, TotalContainer } from "./styles";
+import {
+  Item,
+  Actions,
+  ProductContainer,
+  Image,
+  QuantityContainer,
+  ProductDetails,
+  Summary,
+  TotalContainer
+} from "./styles";
+
 import { Text } from "../Text";
+
 import { formatCurrency } from "../../utils/formatCurrency";
-import { TouchableOpacity } from "react-native";
+
 import { PlusCircle } from "../Icons/PlusCircle";
 import { MinusCircle } from "../Icons/MinusCircle";
 import { Button } from "../Button";
 
 interface CartProps {
   cartItems: CartItem[];
+  onAdd: (product: Product) => void;
+  onDecrement: (product: Product) => void;
 }
 
-export function Cart({ cartItems }: CartProps) {
+export function Cart({ cartItems, onAdd, onDecrement }: CartProps) {
+  const total = cartItems.reduce((acc, cartItem) => {
+    return acc + cartItem.quantity * cartItem.product.price;
+  }, 0);
+
   return (
     <>
       {cartItems.length > 0 && (
@@ -53,10 +71,11 @@ export function Cart({ cartItems }: CartProps) {
 
               </ProductContainer>
               <Actions>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => onAdd(cartItem.product)} >
                   <PlusCircle />
                 </TouchableOpacity>
-                <TouchableOpacity>
+
+                <TouchableOpacity onPress={() => onDecrement(cartItem.product)}>
                   <MinusCircle />
                 </TouchableOpacity>
               </Actions>
@@ -73,7 +92,7 @@ export function Cart({ cartItems }: CartProps) {
                 Total
               </Text>
               <Text weight="600" size={20}>
-                {formatCurrency(120)}
+                {formatCurrency(total)}
               </Text>
             </>
           ) :
