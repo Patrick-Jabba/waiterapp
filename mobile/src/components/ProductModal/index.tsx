@@ -1,13 +1,12 @@
-import { Modal } from "react-native";
+import { Modal, FlatList } from "react-native";
 import { Image, CloseButton, Header, ModalBody, IngredientsContainer, Ingredient, Footer, FooterContainer, PriceContainer } from "./styles";
 
-import { Product } from "../../Types/Product";
-
-import { Text } from "../Text";
-import { Close } from "../Icons/Close";
-import { FlatList } from "react-native";
 import { formatCurrency } from "../../utils/formatCurrency";
+
+import { Product } from "../../Types/Product";
+import { Text } from "../Text";
 import { Button } from "../Button";
+import { Close } from "../Icons/Close";
 
 interface ProductModalProps{
   visible: boolean;
