@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { ProductContainer, ProductImage, ProductDetails, Separator, AddToCartButton } from "./styles";
 
-import { products } from "../../mocks/products";
 import { formatCurrency } from "../../utils/formatCurrency";
 
 import { Text } from "../Text";
@@ -13,9 +12,10 @@ import { Product } from "../../Types/Product";
 
 interface MenuProps{
   onAddToCart: (product: Product) => void;
+  products: Product[];
 }
 
-export function Menu({ onAddToCart }: MenuProps) {
+export function Menu({ onAddToCart, products }: MenuProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<null | Product>(null);
 
